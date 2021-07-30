@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} News Archieve {% endblock %}
+
+{% block body %}
+
+<h1>This is our News filtered by date</h1>
+<p>Fucking filters by year {{year}}</p>
+
+<div class="row d-flex align-items-center">
+    {% for news in article_list %}
+    <div class="col-md-6">
+        <h2>{{ news.author }}</h2>
+        <span class="badge rounded-pill bg-dark">{{ news.pub_date }}</span>
+        <p>{{ news.title }}</p>
+        <span>
+        </span>
+    </div>
+    <div class="col-md-6">
+        {{ news.description }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
